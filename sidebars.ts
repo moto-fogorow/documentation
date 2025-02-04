@@ -32,7 +32,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Development',
-      items: ['dev/tools']
+      items: ['dev/partitions', 'dev/tools']
     },
   ],
 };

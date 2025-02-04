@@ -29,6 +29,11 @@ const sidebars: SidebarsConfig = {
       label: 'Info',
       items: ['info/device-info']
     },
+    {
+      type: 'category',
+      label: 'Development',
+      items: ['dev/tools']
+    },
   ],
 };
 

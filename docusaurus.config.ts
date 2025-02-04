@@ -85,6 +85,11 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
+        {
+          href: 'https://fuckyoumoto.xyz',
+          position: 'left',
+          label: 'Fuckyoumoto project',
+        },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/moto-fogorow/documentation',

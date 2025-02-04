@@ -1,0 +1,85 @@
+---
+title: Fastboot
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import startImg from "@site/static/assets/fastboot/start.png";
+import recoveryImg from "@site/static/assets/fastboot/recovery.png";
+import barcodesImg from "@site/static/assets/fastboot/barcodes.png";
+import restartBootloaderImg from "@site/static/assets/fastboot/restart-bootloader.png";
+import poweroffImg from "@site/static/assets/fastboot/poweroff.png";
+import fastbootdImg from "@site/static/assets/fastboot/fastbootd.jpg";
+
+## Screenshots
+
+<Tabs>
+    <TabItem value="0" label="Start" default>
+        <img src={startImg} width="300" />
+    </TabItem>
+    <TabItem value="1" label="Recovery">
+        <p>Enable this mode to be able to access sensor testing mode through secret dial code.</p>
+        <img src={recoveryImg} width="300" />
+    </TabItem>
+    <TabItem value="2" label="Barcodes">
+        <img src={barcodesImg} width="300" />
+    </TabItem>
+    <TabItem value="3" label="Restart bootloader">
+        <img src={restartBootloaderImg} width="300" />
+    </TabItem>
+    <TabItem value="4" label="Poweroff">
+        <img src={poweroffImg} width="300" />
+    </TabItem>
+</Tabs>
+
+## Boot to Fastboot mode
+There are many ways to boot into Fastboot mode, you can use one of the last complicated ways if for some reason you can't boot into Fastboot.
+
+### Using ADB command
+- Enable USB debugging
+- Connect the phone to PC, run ```adb devices``` command and confirm USB debugging if you have not connected the phone to the current PC via adb before
+- Run the command via adb to reboot into fastboot
+  ```sh
+  adb reboot bootloader
+    ```
+
+### Using VOL- button & USB connection
+- Power off phone
+- **Hold down the VOL- button and connect the phone to the PC** and wait for fastboot to load
+
+### Using Serial Command in Preloader Mode
+- Power off phone
+- Install MTK driver _(If you have Windows)_ - [See tools](../dev/tools.md)
+- Clone [fuckyoumoto repository](https://github.com/moto-penangf/fuckyoumoto)
+- Install dependencies
+  ```shell
+  pip install -r requirements.txt
+    ```
+- Run ``mtkbootcmd.py`` script
+  ```shell
+  python mtkbootcmd.py FASTBOOT
+  ```
+- Connect the phone to PC (It should be detected as Preloader)
+
+## FastbootD
+<img src={fastbootdImg} width="300" />
+
+### Boot to FastbootD mode
+
+
+#### Using ADB command
+- Enable USB debugging
+- Connect the phone to PC, run ```adb devices``` command and confirm USB debugging if you have not connected the phone to the current PC via adb before
+- Run the command via adb to reboot into fastbootd
+  ```sh
+    adb reboot fastboot
+  ```
+
+#### Using Fastboot command
+- Power off phone
+- Boot into fastboot mode
+- Run the command via fastboot to reboot into fastbootd
+  ```sh
+    fastboot reboot fastboot
+  ```

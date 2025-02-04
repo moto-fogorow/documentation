@@ -31,6 +31,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Modes',
+      items: ['modes/fastboot']
+    },
+    {
+      type: 'category',
       label: 'Development',
       items: ['dev/partitions', 'dev/tools']
     },

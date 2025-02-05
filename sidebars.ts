@@ -32,7 +32,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Modes',
-      items: ['modes/fastboot']
+      items: ['modes/fastboot', 'modes/metamode']
     },
     {
       type: 'category',

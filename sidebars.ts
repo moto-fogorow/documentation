@@ -37,7 +37,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Development',
-      items: ['dev/partitions', 'dev/tools']
+      items: ['dev/testpoints', 'dev/partitions', 'dev/tools']
     },
   ],
 };

@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Info',
-      items: ['info/device-info']
+      items: ['info/device-info', 'info/disassembling']
     },
     {
       type: 'category',

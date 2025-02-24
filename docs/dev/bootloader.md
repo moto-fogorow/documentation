@@ -2,14 +2,27 @@
 title: Bootloader
 ---
 
-:::warning 
-Currently, there's no known way to unlock the Moto g24.
+:::info 
+**[Updated 24.02.2025]** 
+
+A way to unlock bootloader via a paid tool has been found
 :::
 
-**TABLE OF CONTENTS**
-* [Official way](#official-way)
-* [mtkclient](#mtkclient)
+## Unlock bootloader
+### Paid method
+For this method you need an [AMT Tool](https://androidmultitool.com/) license, I recommend you rent it from someone for an hour
 
+1. [Download patched lk](../../static/modding/lk-patched.bin)
+2. Open the AMT tool and **flash the patched lk** to save the unlocked bootloader state after unlocking it
+   ![2.jpg](../../static/assets/bootloader/2.jpg)
+   ![3.jpg](../../static/assets/bootloader/3.jpg)
+   ![4.jpg](../../static/assets/bootloader/4.jpg)
+   ![5.jpg](../../static/assets/bootloader/5.jpg)
+
+3. Open the AMT tool and click the **“Unlock bootloader”** button
+![1_2.jpg](../../static/assets/bootloader/1_2.jpg)
+
+## Archive (Old information)
 
 ### Official way
 

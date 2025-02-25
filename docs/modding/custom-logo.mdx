@@ -1,0 +1,23 @@
+import LogoImg1 from "@site/static/assets/custom-logo/1.png";
+import LogoImg2 from "@site/static/assets/custom-logo/2.jpg";
+
+# Custom logo
+You can flash the branded custom logo of fuckyoumoto project
+
+<img src={LogoImg1} width="200" height="400" />
+<img src={LogoImg2} width="300" height="400" />
+
+## Download
+[custom-logo.bin](../../static/modding/custom-logo.bin)
+
+## Flashing guide
+:::warning
+At the moment flashing partitions is only possible via mtkclient if you have already unlocked bootloader
+:::
+
+1. Install [mtkclient](https://github.com/bkerler/mtkclient) (preferably on linux)
+2. Clone repository [fuckyoumoto](https://github.com/moto-penangf/fuckyoumoto)
+3. Flashing the logo partition
+````shell
+$ mtk w logo logo.bin --loader ./sources/fogorow/DA_SWSEC_2316_p325a_dl_forbidden3.bin
+````

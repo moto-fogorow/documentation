@@ -39,6 +39,11 @@ const sidebars: SidebarsConfig = {
       label: 'Development',
       items: ['dev/bootloader', 'dev/testpoints', 'dev/partitions', 'dev/tools']
     },
+    {
+      type: 'category',
+      label: 'Modding',
+      items: ['modding/root']
+    },
   ],
 };
 

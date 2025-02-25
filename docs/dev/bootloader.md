@@ -9,6 +9,12 @@ A way to unlock bootloader via a paid tool has been found
 :::
 
 ## Unlock bootloader
+:::warning
+**Never flash the stock bootloader (lk) as it will automatically lock the bootloader.**
+
+This may turn the device into a “brick”, especially if modifications have been made previously.
+:::
+
 ### Paid method
 For this method you need an [AMT Tool](https://androidmultitool.com/) license in order to utilize the engineering DA they have stored on the servers.
 
@@ -25,6 +31,8 @@ I recommend you rent it from someone for an hour
 3. Open the AMT tool and click the **“Unlock bootloader”** button
 
    ![1_2.jpg](../../static/assets/bootloader/1_2.jpg)
+
+4. 
 
 ## Archive (Old information)
 

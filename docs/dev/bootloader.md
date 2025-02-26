@@ -20,8 +20,8 @@ For this method you need an [AMT Tool](https://androidmultitool.com/) license in
 
 I recommend you rent it from someone for an hour
 
-1. [Download patched lk](../../static/modding/lk-patched.bin)
-2. Open the AMT tool and **flash the patched lk** to save the unlocked bootloader state after unlocking it
+1. Download the latest pre-built version of [Custom Bootloader (ChouChou)](../modding/custom-bootloader) that matches your firmware version.
+2. Open the AMT tool and **flash the ChouChou** to save the unlocked bootloader state after unlocking it
 
    ![2.jpg](../../static/assets/bootloader/2.jpg)
    ![3.jpg](../../static/assets/bootloader/3.jpg)
@@ -31,8 +31,6 @@ I recommend you rent it from someone for an hour
 3. Open the AMT tool and click the **“Unlock bootloader”** button
 
    ![1_2.jpg](../../static/assets/bootloader/1_2.jpg)
-
-4. 
 
 ## Archive (Old information)
 

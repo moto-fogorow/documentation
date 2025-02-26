@@ -1,0 +1,88 @@
+---
+title: Custom bootloader
+---
+
+export const images = [
+    {
+        "payload_version": "0.1",
+        "firmware_version": "UTA34.82-97",
+        "url": "https://penangf.fuckyoumoto.xyz/assets/modding/chouchou/0.1/chouchou-UTA34.82-97.bin"
+    }
+];
+
+# Custom bootloader (ChouChou)
+:::warning
+Make sure you have the [bootloader unlocked](../dev/bootloader.md) or you will get [soft brick](https://penangf.fuckyoumoto.xyz/docs/info/softbrick)!
+:::
+
+:::info
+Thanks to [Roger Ortiz](https://github.com/R0rt1z2) for developing the payload for our bootloader!
+:::
+
+The custom bootloader protects the device from Hard Brick by preventing critical operations such as flashing the preloader and locking the bootloader without restoring the original firmware.
+
+In addition, it extends the functionality by adding new options for customizing and managing the system.
+
+It was originally developed for [penangf (Moto G13/G23)](https://penangf.fuckyoumoto.xyz/docs/modding/custom-bootloader), but was ported for fogorow keeping all functionality and adding new functionality specific to our device.
+
+## Features
+- Blocks ```fastboot flash preloader```
+- Removes orange state
+- Spoofes verified state to green
+- Block ```fastboot flashing lock```
+- Adds ```fastboot oem help```
+- Adds ```fastboot oem hexdump```
+### Specific features, only for our device
+- The bootloader auto-lock security feature has been removed
+
+## Install
+:::warning
+Initial installation requires an engineering DA (Use AMT Tool for example).
+
+To upgrade or rollback to another version of ChouChou you can use mtkclient or fastboot
+:::
+
+### Prebuild images
+
+export const grouped = images.reduce((acc, item) => {
+    if (!acc[item.payload_version]) {
+        acc[item.payload_version] = [];
+    }
+    acc[item.payload_version].push(item);
+    return acc;
+}, {});
+
+{Object.keys(grouped).map(payload_version => (
+<details key={payload_version} className="custom-details">
+<summary>ChouChou v{payload_version}</summary>
+<ul>
+{grouped[payload_version].map(item => (
+<a href={item.url}><li key={item.firmware_version}>{item.firmware_version}</li></a>
+))}
+</ul>
+</details>
+))}
+
+<br />
+
+### Manually build
+1. Download your current firmware archive from [lolinet](https://mirrors.lolinet.com/firmware/lenomola/2024/fogorow/official/)
+2. Clone repository [chouchou](https://github.com/R0rt1z2/chouchou/tree/fogorow) **(branch fogorow)**
+3. Transfer the ```lk.img``` file from the firmware archive to the directory ```chouchou```
+4. Install dependencies
+     ```shell
+     $ sudo pacman -S arm-none-eabi-newlib arm-none-eabi-gcc
+     ```
+5. Build payload
+     ```shell
+     $ cd payload; make; cd ..
+     ```
+6. Patch stock lk
+     ```shell
+     $ python3 patch_lk.py lk.img payload/build/payload.bin
+
+     base: 0x4c400000, size: 1072864, name: lk
+     payload injection point at 0x4c4f6400
+     0x4c427638 (pivot) bl 0x4c4f6400 (payload)
+     Writing 2238304 bytes to lk.img-patched...
+     ```

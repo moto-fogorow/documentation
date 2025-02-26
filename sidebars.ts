@@ -42,7 +42,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Modding',
-      items: ['modding/root', 'modding/custom-logo']
+      items: ['modding/custom-bootloader', 'modding/root', 'modding/custom-logo']
     },
   ],
 };

@@ -20,7 +20,7 @@ For this method you need an [AMT Tool](https://androidmultitool.com/) license in
 
 I recommend you rent it from someone for an hour
 
-1. Download the latest pre-built version of [Custom Bootloader (ChouChou)](../../modding/custom-bootloader) that matches your firmware version.
+1. Download the latest pre-built version of [Custom Bootloader (ChouChou)](../modding/custom-bootloader) that matches your firmware version.
 2. Open the AMT tool and **flash the ChouChou** to save the unlocked bootloader state after unlocking it
 
    ![2.jpg](../../static/assets/bootloader/2.jpg)

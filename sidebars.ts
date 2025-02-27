@@ -44,6 +44,11 @@ const sidebars: SidebarsConfig = {
       label: 'Modding',
       items: ['modding/custom-bootloader', 'modding/root', 'modding/custom-logo']
     },
+    {
+      type: 'category',
+      label: 'GSI Roms',
+      items: ['gsi_roms/info', 'gsi_roms/rating']
+     }
   ],
 };
 

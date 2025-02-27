@@ -1,0 +1,33 @@
+---
+title: Custom recovery
+---
+import twrpImg from "@site/static/assets/custom-recovery/twrp.jpg";
+
+:::warning
+Make sure you have the [bootloader unlocked](../dev/bootloader.md) or you will get soft brick!
+:::
+
+## TWRP
+
+<img src={twrpImg} width="200" />
+
+### Bugs
+- Encryption
+
+### Install
+1. Download [latest release](https://github.com/GitFASTBOOT/Lazy_Action-Recoverys-Builder/releases/)
+2. Reboot to [fastboot mode](../modes/fastboot)
+3. Disable vbmeta (if partition not found - ignore)
+    ```shell
+    $ fastboot flash vbmeta vbmeta.img --disable-verity --disable-verification
+    ```
+4. Flash TWRP
+    ```shell
+    $ fastboot flash vendor_boot vendor_boot.img
+    ```
+
+### Credits
+- Author of the build: [GitFASTBOOT](https://github.com/GitFASTBOOT)
+- Testers:
+    - [hkamori](https://github.com/0xhkamori)
+    - [milktoast56](https://github.com/milktoast56)

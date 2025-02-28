@@ -73,7 +73,7 @@ const config: Config = {
       // {name: 'google-site-verification', content: '<KEY>'},
     ],
     announcementBar: {
-      id: 'twrp_working',
+      id: 'bootloader_unlock',
       content:
         '🎉 Found a way to unlock the bootloader using ChouChou and AMT Tool',
       backgroundColor: '#fafbfc',

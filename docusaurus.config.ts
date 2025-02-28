@@ -72,6 +72,14 @@ const config: Config = {
     metadata: [
       // {name: 'google-site-verification', content: '<KEY>'},
     ],
+    announcementBar: {
+      id: 'twrp_working',
+      content:
+        '🎉 Found a way to unlock the bootloader using ChouChou and AMT Tool',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: true,
+    },
     navbar: {
       title: 'Motorola G24/G24 Power',
       // logo: {

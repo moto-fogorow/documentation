@@ -32,4 +32,5 @@ For discoveries not yet assessed, consider starting a new discussion [here](http
 - [Marcus-J-A](https://github.com/Marcus-J-A)
 - [milktoast56](https://github.com/milktoast56)
 - [R0rt1z2](https://github.com/R0rt1z2)
+- [0xhkamori](https://github.com/0xhkamori)
 - & Other people from [Helio G85 telegram group](https://t.me/motoheliog85)

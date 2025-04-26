@@ -1,0 +1,21 @@
+import props1 from "@site/static/assets/modding/gcam/props-edit1.png";
+import props2 from "@site/static/assets/modding/gcam/props-edit2.png";
+
+# Gcam (Google camera)
+
+GCam is Google's official camera app, originally developed for the Pixel series of smartphones.
+It's known for taking great photos not because of hardware, but because of software processing.
+
+## Install
+:::warning
+Stock firmware doesn't support Camera2 API by default, so you'll need to fix that manually
+:::
+1. [Unlock bootloader](../dev/bootloader.md) and get [root access](./root.mdx) on your device
+2. Add a new property to the end of the ```system/build.prop``` file and save
+    ```shell
+    persist.camera.HAL3.enabled=1
+    ```
+    <img src={props1} width="500" />
+    <img src={props2} width="500" />
+3. Reboot the phone
+4. Download and install one of the [ported versions](https://www.celsoazevedo.com/files/android/google-camera/) of gcam

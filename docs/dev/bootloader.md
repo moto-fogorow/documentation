@@ -15,6 +15,11 @@ A way to unlock bootloader via a paid tool has been found
 This may turn the device into a “brick”, especially if modifications have been made previously.
 :::
 
+:::info
+This guide can also be found on third-party resources<br />
+[XDA](https://xdaforums.com/t/moto-g24-g24-power-fogorow-bootloader-unlock.4721213/) | [4PDA](https://4pda.to/forum/index.php?showtopic=1087420&view=findpost&p=135493823)
+:::
+
 ### Paid method
 For this method you need an [AMT Tool](https://androidmultitool.com/) license in order to utilize the engineering DA they have stored on the servers.
 

@@ -1,5 +1,5 @@
 ---
-title: Partitions
+title: Partitions (UTAS34.82-97-1)
 ---
 
 :::note
@@ -18,9 +18,9 @@ Most sections are only accessible via mtkclient
 | vbmeta_a        | 0x1608000   | 0x800000    | ❌       | ❌        |
 | vbmeta_system_a | 0x1e08000   | 0x800000    | ❌       | ✅        |
 | vbmeta_vendor_a | 0x2608000   | 0x800000    | ❌       | ✅        |
-| vbmeta_b        | 0x2e08000   | 0x800000    | ✅       | ✅        |
-| vbmeta_system_b | 0x3608000   | 0x800000    | ✅       | ✅        |
-| vbmeta_vendor_b | 0x3e08000   | 0x800000    | ✅       | ✅        |
+| vbmeta_b        | 0x2e08000   | 0x800000    | ❌       | ✅        |
+| vbmeta_system_b | 0x3608000   | 0x800000    | ❌       | ✅        |
+| vbmeta_vendor_b | 0x3e08000   | 0x800000    | ❌       | ✅        |
 | md_udc          | 0x4608000   | 0x169a000   | ❌       | ❌        |
 | metadata        | 0x5ca2000   | 0x2000000   | ✅       | ❌        |
 | nvcfg           | 0x7ca2000   | 0x2000000   | ❌       | ❌        |
@@ -47,16 +47,16 @@ Most sections are only accessible via mtkclient
 | nvram           | 0x25780000  | 0x4000000   | ❌       | ❌        |
 | logo            | 0x29780000  | 0x880000    | ❌       | ❌        |
 | md1img_b        | 0x2a000000  | 0x8000000   | ❌       | ❌        |
-| spmfw_b         | 0x32000000  | 0x100000    | ✅       | ❌        |
-| scp_b           | 0x32100000  | 0x600000    | ✅       | ❌        |
-| sspm_b          | 0x32700000  | 0x100000    | ✅       | ❌        |
+| spmfw_b         | 0x32000000  | 0x100000    | ❌       | ❌        |
+| scp_b           | 0x32100000  | 0x600000    | ❌       | ❌        |
+| sspm_b          | 0x32700000  | 0x100000    | ❌       | ❌        |
 | gz_b            | 0x32800000  | 0x1000000   | ❌       | ❌        |
 | lk_b            | 0x33800000  | 0x200000    | ❌       | ❌        |
 | boot_b          | 0x33a00000  | 0x2000000   | ❌       | ❌        |
-| vendor_boot_b   | 0x35a00000  | 0x4000000   | ✅       | ✅        |
+| vendor_boot_b   | 0x35a00000  | 0x4000000   | ❌       | ✅        |
 | init_boot_b     | 0x39a00000  | 0x800000    | ✅       | ❌        |
 | dtbo_b          | 0x3a200000  | 0x800000    | ❌       | ❌        |
-| tee_b           | 0x3aa00000  | 0x500000    | ✅       | ❌        |
+| tee_b           | 0x3aa00000  | 0x500000    | ❌       | ❌        |
 | oem_mfd         | 0x3af00000  | 0x100000    | ❌       | ❌        |
 | elabel          | 0x3b000000  | 0x1800000   | ❌       | ❌        |
 | super           | 0x3c800000  | 0x200000000 | ❌       | ❌        |

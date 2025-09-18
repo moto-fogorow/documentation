@@ -3,9 +3,9 @@ title: Bootloader
 ---
 
 :::info 
-**[Updated 24.02.2025]** 
+**[Updated 18.09.2025]** 
 
-A way to unlock bootloader via a paid tool has been found
+A way to unlock bootloader FOR FREE with mtkclient has been found
 :::
 
 ## Unlock bootloader
@@ -19,6 +19,22 @@ This may turn the device into a “brick”, especially if modifications have be
 This guide can also be found on third-party resources<br />
 [XDA](https://xdaforums.com/t/moto-g24-g24-power-fogorow-bootloader-unlock.4721213/) | [4PDA](https://4pda.to/forum/index.php?showtopic=1087420&view=findpost&p=135493823)
 :::
+
+### Free method
+For this method, you'll need [this mtkclient fork](https://github.com/shomykohai/mtkclient/archive/refs/heads/main.zip) which includes [Carbonara exploit](https://shomy.is-a.dev/penumbra/Mediatek/Exploits/Carbonara).
+
+1. Download the latest pre-built version of [chouchou](../modding/custom-bootloader.mdx)
+2. Install the mtkclient fork from [here](https://github.com/shomykohai/mtkclient/archive/refs/heads/main.zip), and follow the [setup instructions](https://github.com/bkerler/mtkclient?tab=readme-ov-file#install)
+3. Get the DA file from [fuckyoumoto-utils repo](https://github.com/fuckyoumoto/fuckyoumoto-utils/blob/main/sources/fogorow/DA_fogorow.bin)
+4. Run the following commands IN ORDER **WITHOUT DISCONNECTING THE PHONE BETWEEN EACH ONE**
+
+```sh
+$ python mtk.py w lk_a,lk_b chouchou.img,chouchou.img --loader  DA_fogorow.bin
+$ python mtk.py da seccfg unlock --loader DA_fogorow.bin
+```
+
+![mtkclient unlock](../../static/assets/bootloader/mtkclient_unlock.png)
+
 
 ### Paid method
 For this method you need an [AMT Tool](https://androidmultitool.com/) license in order to utilize the engineering DA they have stored on the servers.

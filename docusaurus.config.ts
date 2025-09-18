@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -75,7 +75,7 @@ const config: Config = {
     announcementBar: {
       id: 'bootloader_unlock',
       content:
-        '🎉 Found a way to unlock the bootloader using ChouChou and AMT Tool',
+        '🎉 Found a way to unlock the bootloader for free with mtkclient!',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
       isCloseable: true,

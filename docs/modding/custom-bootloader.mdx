@@ -3,19 +3,15 @@ title: Custom bootloader
 ---
 
 export const images = [
+    {}
     {
-        "payload_version": "0.1",
-        "firmware_version": "UTA34.82-97",
-        "url": "https://fogorow.fuckyoumoto.xyz/modding/chouchou/0.1/chouchou-UTA34.82-97.bin"
-    },
-    {
-        "payload_version": "0.1",
-        "firmware_version": "UTAS34.82-97",
-        "url": "https://fogorow.fuckyoumoto.xyz/modding/chouchou/0.1/chouchou-UTAS34.82-97.bin"
+        "payload_version": "2.0.0",
+        "firmware_version": "any",
+        "url": "https://fogorow.fuckyoumoto.xyz/modding/fogorow-kaeru.bin"
     }
 ];
 
-# Custom bootloader (ChouChou)
+# Custom bootloader (kaeru)
 
 :::info
 Thanks to [Roger Ortiz](https://github.com/R0rt1z2) for developing the payload for our bootloader!
@@ -30,7 +26,7 @@ It was originally developed for [penangf (Moto G13/G23)](https://penangf.fuckyou
 ## Features
 - Blocks ```fastboot flash preloader```
 - Removes orange state
-- Spoofes verified state to green
+- Bootloader lock state spoofing
 - Block ```fastboot flashing lock```
 - Adds ```fastboot oem help```
 - Adds ```fastboot oem hexdump```
@@ -42,9 +38,9 @@ It was originally developed for [penangf (Moto G13/G23)](https://penangf.fuckyou
 
 ## Install
 :::warning
-Initial installation requires an engineering DA (Use AMT Tool for example).
+Initial installation requires penumbra or mtkclient.
 
-To upgrade or rollback to another version of ChouChou you can use mtkclient or fastboot
+To upgrade or rollback to another version of kaeru you can use penumbra or fastboot
 :::
 
 ### Prebuild images
@@ -72,22 +68,23 @@ export const grouped = images.reduce((acc, item) => {
 
 ### Manually build
 1. Download your current firmware archive from [lolinet](https://mirrors.lolinet.com/firmware/lenomola/2024/fogorow/official/)
-2. Clone repository [chouchou](https://github.com/R0rt1z2/chouchou/tree/fogorow) **(branch fogorow)**
-3. Transfer the ```lk.img``` file from the firmware archive to the directory ```chouchou```
-4. Install dependencies
+2. Clone repository [kaeru](https://github.com/R0rt1z2/kaeru/)
+3. Transfer the ```lk.img``` file from the firmware archive to the ```kaeru``` directory
+4. Enter docker container (installation guide [here](https://docs.docker.com/engine/install/)
      ```shell
-     $ sudo pacman -S arm-none-eabi-newlib arm-none-eabi-gcc
+     $ ./docker_run.sh
      ```
 5. Build payload
      ```shell
-     $ cd payload; make; cd ..
+     $ ./build.sh fogorow lk.img
      ```
-6. Patch stock lk
+6. Flash the patched bootloader
      ```shell
-     $ python3 patch_lk.py lk.img payload/build/payload.bin
+     # With fastboot
+     $ fastboot flash lk_a fogorow-kaeru.bin
+     $ fastboot flash lk_b fogorow-kaeru.bin
 
-     base: 0x4c400000, size: 1072864, name: lk
-     payload injection point at 0x4c4f6400
-     0x4c427638 (pivot) bl 0x4c4f6400 (payload)
-     Writing 2238304 bytes to lk.img-patched...
+     # With penumbra
+     $ antumbra -d DA_fogorow.bin w lk_a fogorow-kaeru.bin
+     $ antumbra -d DA_fogorow.bin w lk_b fogorow-kaeru.bin
      ```

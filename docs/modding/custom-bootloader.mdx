@@ -54,7 +54,7 @@ export const grouped = images.reduce((acc, item) => {
 
 {Object.keys(grouped).map(payload_version => (
 <details key={payload_version} className="custom-details">
-<summary>ChouChou v{payload_version}</summary>
+<summary>kaeru v{payload_version}</summary>
 <ul>
 {grouped[payload_version].map(item => (
 <a href={item.url}><li key={item.firmware_version}>{item.firmware_version}</li></a>
